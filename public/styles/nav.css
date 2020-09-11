@@ -14,3 +14,18 @@ nav {
 
 
 
+nav span {
+  font-family: 'Bungee', cursive;
+
+}
+
+/* for classes we have to have a period */
+/* for id we use # */
+/* 
+.nav-p1 {
+  color: red;
+}
+
+#p2-id {
+  color: green;
+} */
