@@ -1,16 +1,13 @@
 .tweet-article {
-  display: block;
-  box-sizing: border-box;
-  height: 300px;
-  width: 100%;
-  margin-top: 40px;
-  padding: 1em;
-  opacity: 0.6;
-  border: 4px solid grey;
+  border: thick #545149 solid;
+  padding: 2rem;
+  margin: 1em;
+  opacity: 0.8;
 }
 
 .tweet-article:hover {
   opacity: 1;
+  box-shadow: 0.8rem 0.8rem #CCCCCC;
 }
 
 .tweet-header {
@@ -18,7 +15,6 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
 }
 
 .tweet-handle {
@@ -48,7 +44,7 @@
   font-size: 0.8rem;
 }
 
-.tweet-icons > div {
+.tweet-icons>div {
   margin: 5px;
 }
 
