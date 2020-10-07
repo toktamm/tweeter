@@ -12,10 +12,17 @@ nav {
   left: 0;
 } 
 
-
-
 nav span {
   font-family: 'Bungee', cursive;
-
 }
 
+#navbar {
+  height: 120px;
+  width: 100vw;
+  width: 100%;
+  background: #4056A1;
+  color: #FFFFFF;
+  padding: 1.5em;
+  position: fixed;
+  top:0;
+}
