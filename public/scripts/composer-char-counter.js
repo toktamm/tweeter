@@ -1,8 +1,13 @@
 $(document).ready(function() {
-  $("#tweet-text").keyup(function() {     // targeting new-tweet with the tweet-text id
-    console.log($(this));
-    console.log($("#tweet-text"));
-    console.log($('<textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>'));
+  $("#tweet-text").keyup(function() {           // targeting new-tweet with the tweet-text id
+    const textArea = $(this);
+    console.log(textArea.val().length);
+    $(".counter").html(140 - textArea.val().length);
+    if ((140 - textArea.val().length) < 0) {
+      $(".counter").addClass("redcolor");       // i'm not writing .redcolor because it's not a selector here
+    } else {
+      $(".counter").removeClass("redcolor");
+    }
   })
 });
 
