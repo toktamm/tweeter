@@ -1,0 +1,52 @@
+.tweet-article {
+  display: block;
+  box-sizing: border-box;
+  height: 300px;
+  width: 100%;
+  margin-top: 40px;
+  padding: 1em;
+  opacity: 0.6;
+  border: 4px solid grey;
+
+}
+
+.tweet-article:hover {
+  opacity: 1;
+}
+
+.tweet-header {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tweet-handle {
+  float: right;
+  font-weight: bold;
+}
+
+.tweet-handle:hover {
+  display: inline;
+}
+
+.tweet-avatar {
+  float: left;
+}
+
+.tweet-date {
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.tweet-icons {
+  float: right;
+  color: darkblue;
+  font-size: 0.8rem;
+}
+
+.tweet-footer {
+  font-size: 1rem;
+  padding: 1rem;
+}

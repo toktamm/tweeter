@@ -28,6 +28,12 @@
   <!-- Link to new-tweet.css -->
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
+  <!-- Link to tweet.css -->
+  <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+
+  <!-- Link to font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -42,7 +48,7 @@
   </nav>
 
 
-  <header>
+  <header class="main-header">
     <div>
       <img src="/images/profile-hex.png">
     </div>
@@ -66,21 +72,20 @@
         </footer>
       </form>
     </section>
-    <section class="all-tweets">
-      <article>
-        <header>
-          <div>User Image</div>
+    <section class="tweet">
+      <article class="tweet-article">
+        <header class="tweet-header">
+          <img class="tweet-avatar" src="/images/profile-hex.png">
           <h3 class>Name</h3>
-          <h3 class="handle">Handle</h3>
+          <h3 class="tweet-handle">Handle</h3>
         </header>
         <h3>If I have seen further it is by standing on the shoulders of giants</h3>
         <footer>
-          <span class="footer-date">10 days ago
-          </span>
-          <span>
-            <i class="flag">flag</i>
-            <i class="retweet">retweet</i>
-            <i class="like">like</i>
+          <span class="tweet-date">10 days ago</span>
+          <span class="tweet-icons">
+            <i class="fas fa-flag tweet-icon">flag</i>
+            <i class="fas fa-retweet tweet-icon">retweet</i>
+            <i class="fas fa-heart tweet-icon">like</i>
           </span>
         </footer>
       </article>
