@@ -60,8 +60,9 @@ $('document').ready(function() {
         url: "/tweets",
         data: $(this).serialize()
       })
-        .done(function(msg) {                // .done is the same as .then
-          alert("Data Saved: " + msg);
+        .then(() => {
+          $('.tweet-article').remove()         // '.tweets-container .tweet-article'
+          loadTweets();
         });
     }
   })
