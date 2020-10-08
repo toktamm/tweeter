@@ -72,7 +72,7 @@ $('document').ready(function() {
         data: $(this).serialize()
       })
         .then(() => {
-          $('.tweet-article').remove()         // or: $('.tweets-container .tweet-article').remove()
+          // $('.tweet-article').remove()         // or: $('.tweets-container .tweet-article').remove()
           loadTweets();
         });
     }
@@ -83,8 +83,9 @@ $('document').ready(function() {
     $.ajax({
       method: "GET",
       url: "/tweets",
-    }).then((tweets) => {
-      renderTweets(tweets);
+    }).then((res) => {
+      $(".tweets-container").empty()
+      renderTweets(res);
     });
 
   }
