@@ -61,7 +61,7 @@ $('document').ready(function() {
         data: $(this).serialize()
       })
         .then(() => {
-          $('.tweet-article').remove()         // '.tweets-container .tweet-article'
+          $('.tweet-article').remove()         // or: $('.tweets-container .tweet-article').remove()
           loadTweets();
         });
     }
