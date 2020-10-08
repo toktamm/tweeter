@@ -54,6 +54,8 @@ $('document').ready(function() {
   $("#create-tweet").on("submit", function(event) {
     event.preventDefault();
 
+    $(".error").empty();
+
     const charCount = $("#tweet-text").val().length;
 
     if (charCount > 140) {
@@ -73,7 +75,6 @@ $('document').ready(function() {
       })
         .then(() => {
           // $('.tweet-article').remove()         // or: $('.tweets-container .tweet-article').remove()
-          $(".error").empty();    // not working?????
           loadTweets();
         });
     }
