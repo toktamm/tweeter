@@ -39,7 +39,7 @@ const renderTweets = function(tweets) {
 
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
-    $(".tweets-container").append($tweet);
+    $(".tweets-container").append($tweet);     //append adds to the end and prepend adds to the front
   }
 
 }
@@ -71,16 +71,33 @@ $('document').ready(function() {
 
   $("#create-tweet").on("submit", function(event) {
     event.preventDefault();
-    console.log( $( this ).serialize() );
+    console.log($(this).serialize());
     $.ajax({
       method: "POST",
       url: "/tweets",
       data: $(this).serialize()
     })
-      .done(function( msg ) {
-        alert( "Data Saved: " + msg );
+      .done(function(msg) {                // .done is the same as .then
+        alert("Data Saved: " + msg);
       });
-})
+  })
+
+
+
+  const loadTweets = function() {
+    $.ajax({
+      method: "GET",
+      url: "/tweets",
+    }).then((tweets) => {
+      renderTweets(tweets);
+    });
+
+  }
+
+  loadTweets();
+
+
+
 
 
 });
