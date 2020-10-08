@@ -45,18 +45,28 @@ $('document').ready(function() {
 
   $("#create-tweet").on("submit", function(event) {
     event.preventDefault();
-    console.log($(this).serialize());
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: $(this).serialize()
-    })
-      .done(function(msg) {                // .done is the same as .then
-        alert("Data Saved: " + msg);
-      });
+
+    const charCount = $("#tweet-text").val().length;
+
+    if (charCount > 140) {
+      alert("you exceeded the character limit!");
+    } else if (charCount === 0) {
+      alert("your tweets can't be empty!");
+    } else {
+
+      console.log($(this).serialize());
+      $.ajax({
+        method: "POST",
+        url: "/tweets",
+        data: $(this).serialize()
+      })
+        .done(function(msg) {                // .done is the same as .then
+          alert("Data Saved: " + msg);
+        });
+    }
   })
 
-
+  // fetching tweets using Ajax
   const loadTweets = function() {
     $.ajax({
       method: "GET",
