@@ -68,6 +68,21 @@ const createTweetElement = function(tweetObject) {
 
 $('document').ready(function() {
   renderTweets(data);
+
+  $("#create-tweet").on("submit", function(event) {
+    event.preventDefault();
+    console.log( $( this ).serialize() );
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: $(this).serialize()
+    })
+      .done(function( msg ) {
+        alert( "Data Saved: " + msg );
+      });
+})
+
+
 });
 
 
