@@ -59,12 +59,9 @@ $('document').ready(function() {
     const charCount = $("#tweet-text").val().length;
 
     if (charCount > 140) {
-      // alert("you exceeded the character limit!");
-      $(".error").append("You exceeded the character limit!").hide();    // using .hide() at the end makes the error slide down
+      $(".error").append("You exceeded the character limit!").slideDown();    // using .hide() at the end makes the error slide down
     } else if (charCount === 0) {
-      // alert("your tweets can't be empty!");
-      const error = $(".error").append("Your tweets can't be empty!").hide();
-      return error.slideDown();
+      $(".error").append("Your tweets can't be empty!").slideDown();
     } else {
 
       console.log($(this).serialize());
