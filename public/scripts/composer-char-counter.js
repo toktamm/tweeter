@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#tweet-text").keyup(function() {
+  $("#tweet-text").keyup(function() {       // for html to select any div we don't write anything
     // const textArea = $(this);
     console.log($(this).val().length);
     let $counter = $(this).parent().find(".counter")
@@ -12,5 +12,4 @@ $(document).ready(function() {
   })
 });
 
-// line 2: for html to select any div we don't write anything
-// if you have double quotes inside a string use single quotes for the outside 
+

@@ -19,7 +19,7 @@ const renderTweets = function(tweets) {
 }
 
 
-const escape =  function(str) {
+const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -57,9 +57,12 @@ $('document').ready(function() {
     const charCount = $("#tweet-text").val().length;
 
     if (charCount > 140) {
-      alert("you exceeded the character limit!");
+      // alert("you exceeded the character limit!");
+      $(".error").append("You exceeded the character limit!");    // using .hide() at the end makes the error slide down
     } else if (charCount === 0) {
-      alert("your tweets can't be empty!");
+      // alert("your tweets can't be empty!");
+      const error = $(".error").append("Your tweets can't be empty!");
+      return error.slideDown()
     } else {
 
       console.log($(this).serialize());
