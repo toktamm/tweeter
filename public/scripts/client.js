@@ -14,7 +14,7 @@ const renderTweets = function(tweets) {
 
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
-    $(".tweets-container").append($tweet);     //append adds to the end and prepend adds to the front
+    $(".tweets-container").prepend($tweet);     //append adds to the end and prepend adds to the front
   }
 
 }
@@ -42,7 +42,6 @@ const createTweetElement = function(tweetObject) {
 
 
 $('document').ready(function() {
-  renderTweets(data);
 
   $("#create-tweet").on("submit", function(event) {
     event.preventDefault();
@@ -58,7 +57,6 @@ $('document').ready(function() {
   })
 
 
-
   const loadTweets = function() {
     $.ajax({
       method: "GET",
@@ -70,9 +68,6 @@ $('document').ready(function() {
   }
 
   loadTweets();
-
-
-
 
 
 });
