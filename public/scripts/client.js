@@ -29,6 +29,10 @@ const escape = function(str) {
 
 
 const createTweetElement = function(tweetObject) {
+
+  const daysAgo = Math.floor((Date.now() - tweetObject.created_at) / (1000 * 3600 * 24));
+
+
   let $tweet = `<article class="tweet-article">
     <header class="tweet-header">
       <img class="tweet-avatar" src="${escape(tweetObject.user.avatars)}">
@@ -37,7 +41,7 @@ const createTweetElement = function(tweetObject) {
     </header>
       <h3>${escape(tweetObject.content.text)}</h3>
       <footer>
-        <span class="tweet-date">${escape(tweetObject.created_at)}</span>
+        <span class="tweet-date">${escape(daysAgo)} Days Ago</span>
         <span class="tweet-icons">
           <div><i class="far fa-flag"></i></div>
           <div><i class="fas fa-retweet"></i></div>
@@ -51,6 +55,8 @@ const createTweetElement = function(tweetObject) {
 
 $('document').ready(function() {
 
+  $(".error").hide();
+
   $("#create-tweet").on("submit", function(event) {
     event.preventDefault();
 
@@ -59,8 +65,10 @@ $('document').ready(function() {
     const charCount = $("#tweet-text").val().length;
 
     if (charCount > 140) {
+      $(".error").hide();
       $(".error").append("You exceeded the character limit!").slideDown();    // using .hide() at the end makes the error slide down
     } else if (charCount === 0) {
+      $(".error").hide();
       $(".error").append("Your tweets can't be empty!").slideDown();
     } else {
 
