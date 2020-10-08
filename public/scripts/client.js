@@ -16,20 +16,28 @@ const renderTweets = function(tweets) {
     const $tweet = createTweetElement(tweet);
     $(".tweets-container").prepend($tweet);     //append adds to the end and prepend adds to the front
   }
-
 }
+
+
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
+
 
 
 const createTweetElement = function(tweetObject) {
   let $tweet = `<article class="tweet-article">
     <header class="tweet-header">
-      <img class="tweet-avatar" src="${tweetObject.user.avatars}">
-        <h3 class>${tweetObject.user.name}</h3>
-        <h3 class="tweet-handle">${tweetObject.user.handle}</h3>
+      <img class="tweet-avatar" src="${escape(tweetObject.user.avatars)}">
+        <h3 class>${escape(tweetObject.user.name)}</h3>
+        <h3 class="tweet-handle">${escape(tweetObject.user.handle)}</h3>
     </header>
-      <h3>${tweetObject.content.text}</h3>
+      <h3>${escape(tweetObject.content.text)}</h3>
       <footer>
-        <span class="tweet-date">${tweetObject.created_at}</span>
+        <span class="tweet-date">${escape(tweetObject.created_at)}</span>
         <span class="tweet-icons">
           <div><i class="far fa-flag"></i></div>
           <div><i class="fas fa-retweet"></i></div>
@@ -80,9 +88,5 @@ $('document').ready(function() {
 
   loadTweets();
 
-
 });
-
-
-
 
