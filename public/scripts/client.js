@@ -58,11 +58,11 @@ $('document').ready(function() {
 
     if (charCount > 140) {
       // alert("you exceeded the character limit!");
-      $(".error").append("You exceeded the character limit!");    // using .hide() at the end makes the error slide down
+      $(".error").append("You exceeded the character limit!").hide();    // using .hide() at the end makes the error slide down
     } else if (charCount === 0) {
       // alert("your tweets can't be empty!");
-      const error = $(".error").append("Your tweets can't be empty!");
-      return error.slideDown()
+      const error = $(".error").append("Your tweets can't be empty!").hide();
+      return error.slideDown();
     } else {
 
       console.log($(this).serialize());
@@ -73,6 +73,7 @@ $('document').ready(function() {
       })
         .then(() => {
           // $('.tweet-article').remove()         // or: $('.tweets-container .tweet-article').remove()
+          $(".error").empty();    // not working?????
           loadTweets();
         });
     }
