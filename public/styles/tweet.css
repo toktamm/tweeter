@@ -38,10 +38,14 @@
 }
 
 .tweet-icons {
-  display: flex;
+  display: none;
   float: right;
   color: darkblue;
   font-size: 0.8rem;
+}
+
+.tweet-article:hover .tweet-icons {
+  display: flex;
 }
 
 .tweet-icons>div {

@@ -30,8 +30,9 @@ const escape = function(str) {
 
 const createTweetElement = function(tweetObject) {
 
-  const daysAgo = Math.floor((Date.now() - tweetObject.created_at) / (1000 * 3600 * 24));
+  // const daysAgo = Math.floor((Date.now() - tweetObject.created_at) / (1000 * 3600 * 24));
 
+  const date = moment(tweetObject.created_at).fromNow();
 
   let $tweet = `<article class="tweet-article">
     <header class="tweet-header">
@@ -41,7 +42,7 @@ const createTweetElement = function(tweetObject) {
     </header>
       <h3>${escape(tweetObject.content.text)}</h3>
       <footer>
-        <span class="tweet-date">${escape(daysAgo)} Days Ago</span>
+        <span class="tweet-date">${escape(date)}</span>
         <span class="tweet-icons">
           <div><i class="far fa-flag"></i></div>
           <div><i class="fas fa-retweet"></i></div>
@@ -81,6 +82,7 @@ $('document').ready(function() {
         .then(() => {
           // $('.tweet-article').remove()         // or: $('.tweets-container .tweet-article').remove()
           loadTweets();
+          $("#tweet-text").val("");
         });
     }
   })
