@@ -44,9 +44,9 @@ const createTweetElement = function(tweetObject) {
       <footer>
         <span class="tweet-date">${escape(date)}</span>
         <span class="tweet-icons">
-          <div><i class="far fa-flag"></i></div>
+          <div><i class="fas fa-flag"></i></div>
           <div><i class="fas fa-retweet"></i></div>
-          <div><i class="far fa-heart"></i></div>
+          <div><i class="fas fa-heart"></i></div>
         </span>
       </footer>
     </article>`;
@@ -67,7 +67,7 @@ $('document').ready(function() {
 
     if (charCount > 140) {
       $(".error").hide();
-      $(".error").append("You exceeded the character limit!").slideDown();    // using .hide() at the end makes the error slide down
+      $(".error").append("You exceeded the character limit!").slideDown();
     } else if (charCount === 0) {
       $(".error").hide();
       $(".error").append("Your tweets can't be empty!").slideDown();
@@ -81,8 +81,11 @@ $('document').ready(function() {
       })
         .then(() => {
           // $('.tweet-article').remove()         // or: $('.tweets-container .tweet-article').remove()
-          loadTweets();
+          $(".error").hide();
           $("#tweet-text").val("");
+          $(".new-tweet footer .counter").val(140);
+          loadTweets();
+
         });
     }
   })
