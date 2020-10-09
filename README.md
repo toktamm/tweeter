@@ -16,4 +16,8 @@ This repository is the starter code for the project: Students will fork and clon
 - Express
 - Node 5.10.x or above
 
+## Schreeenshots
+
+!["Screenshot of tweets in desktop view"](https://github.com/toktamm/tweeter/blob/master/docs/tweets.png?raw=true)
+!["Screenshot of error message in mobile view"](https://github.com/toktamm/tweeter/blob/master/docs/tweet%20error%20in%20mobile%20view.png?raw=true)
 
