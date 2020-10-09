@@ -63,7 +63,7 @@ $('document').ready(function() {
       $(".error").append("You exceeded the character limit!").slideDown();
     } else if (charCount === 0) {
       $(".error").hide();
-      $(".error").append("Your tweets can't be empty!").slideDown();
+      $(".error").append("Your tweet can't be empty!").slideDown();
     } else {
 
       console.log($(this).serialize());

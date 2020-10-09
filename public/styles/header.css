@@ -12,8 +12,16 @@ header.main-header {
 
 @media only screen and (min-width: 1024px) {
   header.main-header {
-    width: 35%;
+    width: 30%;
     margin-top: 220px;
+    margin-left: 2em;
     align-self: flex-start;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  header.main-header {
+    height: 520px;
+    margin-top: 0;
   }
 }
