@@ -30,17 +30,20 @@
   color: red;
 }
 
-
 .error {
   border: 1px solid;
-	margin: 10px auto;
-	padding: 15px 10px 15px 50px;
-	background-repeat: no-repeat;
-	background-position: 10px center;
+  margin: 10px auto;
+  padding: 15px 10px 15px 50px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
   max-width: 460px;
   color: #D8000C;
   background-color: #FFBABA;
   background-image: url('https://i.imgur.com/GnyDvKN.png');
 }
 
-
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    width: 90%;
+  }
+}
