@@ -4,33 +4,26 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-// Fake data taken from initial-tweets.json
-
+// render tweets
 const renderTweets = function(tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
-
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
-    $(".tweets-container").prepend($tweet);     //append adds to the end and prepend adds to the front
+    $(".tweets-container").prepend($tweet);
   }
 }
 
-
+// escape for avoiding cross-site scripting
 const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
 
-
-
-
+// create tweet function
 const createTweetElement = function(tweetObject) {
-
-  // const daysAgo = Math.floor((Date.now() - tweetObject.created_at) / (1000 * 3600 * 24));
 
   const date = moment(tweetObject.created_at).fromNow();
 
@@ -78,15 +71,12 @@ $('document').ready(function() {
         method: "POST",
         url: "/tweets",
         data: $(this).serialize()
-      })
-        .then(() => {
-          // $('.tweet-article').remove()         // or: $('.tweets-container .tweet-article').remove()
-          $(".error").hide();
-          $("#tweet-text").val("");
-          $(".new-tweet footer .counter").val(140);
-          loadTweets();
-
-        });
+      }).then(() => {
+        $(".error").hide();
+        $("#tweet-text").val("");
+        $(".new-tweet footer .counter").val(140);
+        loadTweets();
+      });
     }
   })
 
@@ -99,10 +89,7 @@ $('document').ready(function() {
       $(".tweets-container").empty()
       renderTweets(res);
     });
-
   }
-
   loadTweets();
-
 });
 

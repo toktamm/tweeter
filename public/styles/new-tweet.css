@@ -22,7 +22,7 @@
   color: #FFFFFF;
 }
 
-.new-tweet footer .counter {        /* apply the rules to any tag with the class counter that is a child of the tag with class new tweet */
+.new-tweet footer .counter {
   font-family: 'Bungee', cursive;
 }
 
